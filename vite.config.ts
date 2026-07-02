@@ -8,10 +8,6 @@ import type { Plugin } from 'vite'
  * Resolves Figma Make asset imports (`figma:asset/<hash>.<ext>`)
  * to the local `assets/` folder so the project runs outside Figma.
  */
-export default defineConfig({
-  base: '/figma_make_portfolio_site/',
-  // остальные настройки как есть
-})
 function figmaAssetPlugin(): Plugin {
   return {
     name: 'figma-asset-resolver',
@@ -34,6 +30,7 @@ function figmaAssetPlugin(): Plugin {
 }
 
 export default defineConfig({
+  base: '/figma_make_portfolio_site/',
   plugins: [
     figmaAssetPlugin(),
     react(),
